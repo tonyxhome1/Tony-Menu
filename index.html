@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="th">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#111111">
-  <meta name="description" content="Digital menu">
+  <meta name="description" content="View our restaurant menu in full page with easy zoom controls.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Digital Menu">
-  <meta property="og:description" content="เปิดดูเมนูอาหารแบบเต็มหน้า พร้อมซูมอ่านรายละเอียด">
+  <meta property="og:description" content="View our restaurant menu in full page with easy zoom controls.">
   <meta property="og:image" content="./menu/3.png">
   <title>Digital Menu</title>
   <link rel="stylesheet" href="./style.css">
@@ -17,21 +17,21 @@
     <header class="topbar">
       <div>
         <p class="eyebrow">DIGITAL MENU</p>
-        <h1>เมนูอาหาร</h1>
+        <h1>Restaurant Menu</h1>
       </div>
-      <button class="help-btn" id="helpBtn" type="button" aria-label="วิธีใช้งาน">?</button>
+      <button class="help-btn" id="helpBtn" type="button" aria-label="How to use">?</button>
     </header>
 
     <section class="gallery" id="gallery" aria-label="Menu pages"></section>
 
     <div class="viewer" id="viewer" aria-hidden="true">
       <div class="viewer-bar">
-        <span class="page-label" id="pageLabel">หน้า 1 / 13</span>
+        <span class="page-label" id="pageLabel">Page 1 / 13</span>
         <div class="viewer-actions">
-          <button type="button" id="zoomOut" aria-label="ซูมออก">−</button>
-          <button type="button" id="zoomReset" aria-label="รีเซ็ตขนาด">100%</button>
-          <button type="button" id="zoomIn" aria-label="ซูมเข้า">+</button>
-          <button type="button" id="closeViewer" aria-label="ปิด">×</button>
+          <button type="button" id="zoomOut" aria-label="Zoom out">−</button>
+          <button type="button" id="zoomReset" aria-label="Reset zoom">100%</button>
+          <button type="button" id="zoomIn" aria-label="Zoom in">+</button>
+          <button type="button" id="closeViewer" aria-label="Close">×</button>
         </div>
       </div>
 
@@ -41,24 +41,24 @@
         </div>
       </div>
 
-      <button class="nav prev" id="prevPage" type="button" aria-label="หน้าก่อนหน้า">‹</button>
-      <button class="nav next" id="nextPage" type="button" aria-label="หน้าถัดไป">›</button>
+      <button class="nav prev" id="prevPage" type="button" aria-label="Previous page">‹</button>
+      <button class="nav next" id="nextPage" type="button" aria-label="Next page">›</button>
 
       <div class="viewer-hint" id="viewerHint">
-        Pinch / double tap / wheel เพื่อซูม • ลากเพื่อเลื่อน • ปัดซ้าย/ขวาเพื่อเปลี่ยนหน้า
+        Pinch / double tap / wheel to zoom • Drag to pan • Swipe left/right to change page
       </div>
     </div>
 
     <div class="modal" id="helpModal" aria-hidden="true">
       <div class="modal-card">
-        <button class="modal-close" id="closeHelp" type="button" aria-label="ปิด">×</button>
-        <h2>วิธีใช้งาน</h2>
+        <button class="modal-close" id="closeHelp" type="button" aria-label="Close">×</button>
+        <h2>How to Use</h2>
         <ul>
-          <li>แตะรูปเมนูเพื่อเปิดแบบเต็มหน้า</li>
-          <li>มือถือ: pinch หรือแตะสองครั้งเพื่อซูม แล้วลากเพื่อเลื่อน</li>
-          <li>คอมพิวเตอร์: ใช้ล้อเมาส์, ปุ่ม +/− หรือปุ่ม 0 เพื่อรีเซ็ต</li>
-          <li>ใช้ปุ่ม ‹ › หรือปุ่มลูกศรซ้าย/ขวาเพื่อเปลี่ยนหน้า</li>
-          <li>กด Esc เพื่อปิดหน้าดูเมนู</li>
+          <li>Tap a menu image to open it in full-screen view.</li>
+          <li>Mobile: pinch or double-tap to zoom, then drag to pan.</li>
+          <li>Desktop: use the mouse wheel, +/− buttons, or 0 to reset zoom.</li>
+          <li>Use the ‹ › buttons or Left/Right Arrow keys to change pages.</li>
+          <li>Press Esc to close the menu viewer.</li>
         </ul>
       </div>
     </div>

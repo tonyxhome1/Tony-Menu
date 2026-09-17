@@ -34,10 +34,10 @@ function renderGallery() {
     figure.className = "menu-card";
     figure.tabIndex = 0;
     figure.setAttribute("role", "button");
-    figure.setAttribute("aria-label", `เปิดเมนูหน้า ${page.number}`);
+    figure.setAttribute("aria-label", `Open menu page ${page.number}`);
     figure.innerHTML = `
-      <img src="${page.src}" alt="เมนู หน้า ${page.number}" loading="${index < 2 ? "eager" : "lazy"}">
-      <figcaption>หน้า ${page.number}</figcaption>
+      <img src="${page.src}" alt="Menu page ${page.number}" loading="${index < 2 ? "eager" : "lazy"}">
+      <figcaption>Page ${page.number}</figcaption>
     `;
     figure.addEventListener("click", () => openViewer(index));
     figure.addEventListener("keydown", e => {
@@ -97,9 +97,9 @@ function closeViewer() {
 
 function loadPage() {
   const page = menuPages[current];
-  pageLabel.textContent = `หน้า ${page.number} / ${menuPages.length}`;
+  pageLabel.textContent = `Page ${page.number} / ${menuPages.length}`;
   image.src = page.src;
-  image.alt = `เมนู หน้า ${page.number}`;
+  image.alt = `Menu page ${page.number}`;
   image.onload = fitImage;
   x = y = 0;
   scale = 1;
