@@ -1,5 +1,5 @@
-const menuPages = Array.from({ length: 13 }, (_, i) => {
-  const number = i + 3;
+const menuPages = Array.from({ length: 16 }, (_, i) => {
+  const number = i + 2;
   return { number, filename: `${number}.png`, src: `./menu/${number}.png` };
 });
 
