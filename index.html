@@ -4,58 +4,65 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#111111">
-  <title>Restaurant Digital Menu</title>
-  <meta name="description" content="View our restaurant menu.">
-  <meta property="og:title" content="Restaurant Digital Menu">
-  <meta property="og:description" content="View our restaurant menu.">
+  <meta name="description" content="Digital menu">
   <meta property="og:type" content="website">
-  <!-- Replace these two URLs after publishing. -->
-  <meta property="og:image" content="https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/menu/3.png">
-  <meta property="og:url" content="https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/">
+  <meta property="og:title" content="Digital Menu">
+  <meta property="og:description" content="เปิดดูเมนูอาหารแบบเต็มหน้า พร้อมซูมอ่านรายละเอียด">
+  <meta property="og:image" content="./menu/3.png">
+  <title>Digital Menu</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <main class="app">
-    <header class="site-header">
+    <header class="topbar">
       <div>
         <p class="eyebrow">DIGITAL MENU</p>
-        <h1>Restaurant Menu</h1>
+        <h1>เมนูอาหาร</h1>
       </div>
-      <p class="page-count" id="pageCount">13 pages</p>
+      <button class="help-btn" id="helpBtn" type="button" aria-label="วิธีใช้งาน">?</button>
     </header>
 
     <section class="gallery" id="gallery" aria-label="Menu pages"></section>
-    <p class="load-error" id="loadError" hidden>
-      ไม่สามารถโหลดรูปเมนูบางหน้าได้ กรุณาตรวจสอบไฟล์ในโฟลเดอร์ <code>menu</code>
-    </p>
+
+    <div class="viewer" id="viewer" aria-hidden="true">
+      <div class="viewer-bar">
+        <span class="page-label" id="pageLabel">หน้า 1 / 13</span>
+        <div class="viewer-actions">
+          <button type="button" id="zoomOut" aria-label="ซูมออก">−</button>
+          <button type="button" id="zoomReset" aria-label="รีเซ็ตขนาด">100%</button>
+          <button type="button" id="zoomIn" aria-label="ซูมเข้า">+</button>
+          <button type="button" id="closeViewer" aria-label="ปิด">×</button>
+        </div>
+      </div>
+
+      <div class="viewer-stage" id="viewerStage">
+        <div class="image-wrap" id="imageWrap">
+          <img id="viewerImage" alt="" draggable="false">
+        </div>
+      </div>
+
+      <button class="nav prev" id="prevPage" type="button" aria-label="หน้าก่อนหน้า">‹</button>
+      <button class="nav next" id="nextPage" type="button" aria-label="หน้าถัดไป">›</button>
+
+      <div class="viewer-hint" id="viewerHint">
+        Pinch / double tap / wheel เพื่อซูม • ลากเพื่อเลื่อน • ปัดซ้าย/ขวาเพื่อเปลี่ยนหน้า
+      </div>
+    </div>
+
+    <div class="modal" id="helpModal" aria-hidden="true">
+      <div class="modal-card">
+        <button class="modal-close" id="closeHelp" type="button" aria-label="ปิด">×</button>
+        <h2>วิธีใช้งาน</h2>
+        <ul>
+          <li>แตะรูปเมนูเพื่อเปิดแบบเต็มหน้า</li>
+          <li>มือถือ: pinch หรือแตะสองครั้งเพื่อซูม แล้วลากเพื่อเลื่อน</li>
+          <li>คอมพิวเตอร์: ใช้ล้อเมาส์, ปุ่ม +/− หรือปุ่ม 0 เพื่อรีเซ็ต</li>
+          <li>ใช้ปุ่ม ‹ › หรือปุ่มลูกศรซ้าย/ขวาเพื่อเปลี่ยนหน้า</li>
+          <li>กด Esc เพื่อปิดหน้าดูเมนู</li>
+        </ul>
+      </div>
+    </div>
   </main>
-
-  <div class="viewer" id="viewer" aria-hidden="true">
-    <div class="viewer-topbar">
-      <button class="icon-btn" id="closeBtn" type="button" aria-label="ปิด">×</button>
-      <div class="viewer-title" id="viewerTitle">Menu 3</div>
-      <div class="viewer-counter" id="viewerCounter">1 / 13</div>
-    </div>
-
-    <div class="viewer-stage" id="viewerStage">
-      <img id="viewerImage" alt="Menu page" draggable="false">
-      <div class="viewer-message" id="viewerMessage" hidden></div>
-    </div>
-
-    <div class="controls" aria-label="Menu controls">
-      <button class="control-btn" id="prevBtn" type="button" aria-label="หน้าก่อนหน้า">‹</button>
-      <button class="control-btn" id="zoomOutBtn" type="button" aria-label="ลดขนาด">−</button>
-      <button class="control-btn reset" id="resetBtn" type="button" aria-label="รีเซ็ตการซูม">Reset</button>
-      <button class="control-btn" id="zoomInBtn" type="button" aria-label="ขยาย">+</button>
-      <button class="control-btn" id="nextBtn" type="button" aria-label="หน้าถัดไป">›</button>
-    </div>
-
-    <div class="hint">
-      <span class="desktop-hint">Scroll = Zoom · Drag = Pan · ← → = เปลี่ยนหน้า · Esc = ปิด</span>
-      <span class="mobile-hint">Pinch / Double tap = Zoom · ปัดซ้าย/ขวา = เปลี่ยนหน้า</span>
-    </div>
-  </div>
-
   <script src="./script.js"></script>
 </body>
 </html>
